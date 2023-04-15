@@ -1,0 +1,38 @@
+<canvas width = "600" height="400"></canvas>
+
+<script>
+    // variavel usada como tela
+    var tela = document.querySelector('canvas');
+
+    // variavel usada como pincel
+    var pincel = tela.getContext('2d');
+
+    // TRIANGULO EXTERNO
+    pincel.fillStyle = 'black'; // cor do triangulo externo
+    pincel.beginPath(); // novo caminho
+    pincel.moveTo(50, 50); // coloco o pincel na posição inicial
+
+    //coordenada um -> (50, 400)
+    pincel.lineTo(50, 400); // primeira linha do triangulo
+
+    //coordenada dois -> (400, 400)
+    pincel.lineTo(400, 400); // segunda linha do triangulo
+
+    //preenchendo o desenho
+    pincel.fill();
+//------------------------------------------------------------
+
+    // TRIANGULO INTERNO
+    pincel.fillStyle = 'white'; // cor do triangulo interno
+    pincel.beginPath(); // novo caminho
+    pincel.moveTo(100, 175); // coloco o pincel na posição inicial
+
+    //coordenada um -> (100, 350)
+    pincel.lineTo(100, 350); // primeira linha do triangulo
+
+    //coordenada dois -> (275, 350)
+    pincel.lineTo(275, 350); // segunda linha do triangulo
+
+    //preenchendo o desenho
+    pincel.fill();
+</script>

@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() // função para pular linha
+    {
+        document.write("<br><hr><br>");
+    }
+
+    function mostra(conteudo) // função para print
+    {
+        document.write("<big>" + conteudo + "</big>");
+        pulaLinha();
+    }
+
+    var anoCopa = 1930; // teve copa nesse ano
+    while(anoCopa <= 1950) // repita até que a condição seja falsa
+    {
+        mostra("teve copa em " + anoCopa);
+        anoCopa += 4;
+    }
+
+    pulaLinha();
+    mostra("Tabuada do 7");
+
+    // laço de repetição for
+    for(var multiplicador = 1; // inicializa o contador
+            multiplicador <= 10; // condição de parada
+            multiplicador++) // incremento
+    {
+        mostra(7 * multiplicador) // tabuada do 7
+    }
+
+    alert("FIM")
+</script>

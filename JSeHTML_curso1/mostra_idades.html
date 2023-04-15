@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() // função para pular linha
+    {
+        document.write("<br><hr><br>");
+    }
+
+    function mostra(conteudo) // função para print
+    {
+        document.write("<big>" + conteudo + "</big>");
+        pulaLinha();
+    }
+
+    var ano = 2023; // ano atual
+
+    mostra("Eu nasci em: " + (ano - 21)); //print ano de nascimento
+    mostra("Adriano nasceu em: " + (ano - 30)); //print ano de nascimento
+</script>

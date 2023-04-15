@@ -1,0 +1,95 @@
+<meta charset="UTF-8">
+
+<input/>
+
+<!--botão visivel ao usuário-->
+<button>Compare com o meu segredo</button>
+
+<script>
+    //função gera número aleatorio
+    function sorteia()
+    {
+        return Math.round(Math.random() * 10);
+    }
+
+    //função para gerar arrays com numeros aleatorios
+    function sorteiaNumber(quant) // recebe o numero de elementos 
+    {
+        var segredos = [];
+        var control = 0;
+
+        while (control < quant) // adiciona numeros 
+        {
+            var number = sorteia(); //gera números aleatorios
+            if(number != 0) // não queremos o número 0
+            {
+                var bool = false; 
+                for(var i = 0; i < segredos.length; i++) // verifica se o elemento ja existe no array
+                    if(segredos[i] == number)
+                    {
+                        bool = true;
+                        break;
+                    }
+            
+                if(!bool) // se não existe: incrementa e adiciona
+                {
+                    segredos.push(sorteia());
+                    control ++;
+                } 
+            }
+            
+        }
+        return segredos; // retorna a lista
+    }
+
+    // var segredo = Math.round(Math.random() * 10); // segredo 1
+    //2, 5, 9
+
+    var segredos = sorteiaNumber(3); // array de segredos 
+    console.log(segredos);
+    //document.querySelector -> pega um dado do mundo html e joga numa variavel JS
+    //recebe como parametro a tag de onde o dado vai ser extraído 
+    var input = document.querySelector("input");
+
+    //habilita a caixa de texto para escrita
+    input.focus();
+    
+    function verifica()
+    {
+        //variavel de controle
+        var control = false;
+
+        for(posicao = 0; posicao < segredos.length; posicao ++) // percorrer o array
+        {
+            // input.value -> consigo trabalhar com o conteúdo da variavel
+            if (input.value == segredos[posicao])
+            {
+                alert("Você acertou");
+                control = true;
+                break;
+            }
+        }
+
+        if(!control)
+            alert("Você errou!!");
+
+        // input.value -> consigo trabalhar com o conteúdo da variavel
+    //    if (input.value == segredo || input.value == segredo2 || input.value == segredo3)
+    //    {
+    //        alert("Você acertou");
+    //    }
+    //     else
+    //        alert("Você errou");
+        
+        input.value = ""; // limpa a caixa de texto
+        input.focus(); // ja habilita a caixa de texto para poder escrever novamente
+    }
+
+    // insere o conteúdo do mundo HTML da tag button a variavel button
+    var button = document.querySelector("button");
+
+    //atribui ao click do botao chamar a função verifica;
+    // a função precisa estar sem os parenteses para copiar a função e atribuir ao 
+    // click do botao.
+    button.onclick = verifica;
+</script>

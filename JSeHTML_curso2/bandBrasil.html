@@ -1,0 +1,49 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    // variavel que será a tela 
+    var tela = document.querySelector('canvas');
+
+    // variaveel que será o pincel
+    var pincel = tela.getContext('2d');
+
+    // Retangulo da bandeira
+    pincel.fillStyle = 'green'; // cor do retangulo
+    pincel.fillRect(0, 0, 600, 400); // posição e tamanho do retangulo
+
+    // triangulos da bandeira
+    pincel.fillStyle = 'yellow'; // cor do losangulo
+    pincel.beginPath(); // novo caminho
+    pincel.moveTo(300, 50); // posição inicial do primerio triangulo
+
+    //coordenada um -> (50, 200)
+    pincel.lineTo(50, 200); // primeira linha do triangulo
+
+    //coordenada dois -> (550, 200)
+    pincel.lineTo(550, 200); // segunda linha do triangulo
+
+    //preenchendo meu triangulo
+    pincel.fill();
+    
+    //Segundo triangulo
+    pincel.fillStyle = 'yellow'; // cor do losangulo
+    pincel.beginPath(); // novo caminho
+    pincel.moveTo(300, 350); // posição inicial do segundo triangulo
+
+    // coordenada um -> (50, 200)
+    pincel.lineTo(50, 200); // primeira linha do triangulo
+
+    //coordenada dois -> (550, 200)
+    pincel.lineTo(550, 200); // segunda linha do triangulo
+
+    //preenchendo meu triangulo
+    pincel.fill();
+
+    //circulo da bandeira 
+    pincel.fillStyle = 'blue'; // cor do circulo
+    pincel.beginPath(); // novo caminho
+    pincel.arc(300, 200, 100, 0, 2 * 3.14); //circulo de raio 100
+
+    //preenchendo meu circulo
+    pincel.fill();
+</script>

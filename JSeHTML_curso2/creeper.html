@@ -1,0 +1,29 @@
+<canvas width = "600" height="400"></canvas>
+
+<script>
+    // variavel que será a tela do meu desenho
+    var tela = document.querySelector('canvas');
+
+    // variavel que sera o pincel
+    var pincel = tela.getContext('2d');
+
+    //cabeça do creeper -> tamanho(350 , 300)
+    pincel.fillStyle = 'darkgreen'; // cor do pincel
+    pincel.fillRect(125, 50, 350, 300); // posição e tamanho da cabeça
+
+    //olhos do creeper -> tamanho(90, 90)
+    pincel.fillStyle = 'black'; // cor dos olhos
+    pincel.fillRect(175, 110, 90, 90); // posição e tamanho do olho esquerdo
+    pincel.fillRect(335, 110, 90, 90); // posição e tamanho do olho direito
+    
+    //nariz do creeper -> tamanho(70, 100)
+    pincel.fillStyle = 'black'; // cor dos olhos
+    pincel.fillRect(265, 200, 70, 100); // posição e tamanho do nariz
+
+    //partes da boca do creeper -> tamanho(40, 110)
+    pincel.fillStyle = 'black';
+    pincel.fillRect(225, 240, 40, 110); // posição e tamanho da parte esquerda da boca
+    pincel.fillRect(335, 240, 40, 110); // posição e tamanho da parte direita da boca
+
+    // creeper feito com sucesso!!
+</script>

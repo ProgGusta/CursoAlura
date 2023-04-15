@@ -1,0 +1,84 @@
+<meta charset="UTF-8">
+<canvas width="600" height="400"></canvas>
+
+<script>
+    // variavel para tela
+    var tela = document.querySelector('canvas');
+    
+    // variavel para pincel
+    var pincel = tela.getContext('2d');
+
+    // cor e retangulo de fundo
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    // desenha circulo
+    function drawCircle(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    // limpar a tela
+    function limpaTela()
+    {
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    // variavel raio
+    raio = 10;
+
+    //eixo x e y
+    var x;
+    var y;
+
+    //função para desenhar alvo
+    function drawRay(x, y)
+    {
+        drawCircle(x, y, raio + 20, 'red');
+        drawCircle(x, y, raio + 10, 'white');
+        drawCircle(x, y, raio, 'red');
+    }
+
+    //função para sortear os eixos
+    function rafflePosition(max)
+    {
+        // Math.floor -> arredonda o número para baixo
+        return Math.floor(Math.random() * max);
+    }
+
+    //função para atualizar a tela
+    function attTela()
+    {
+        //limpar a tela
+        limpaTela();
+
+        // eixos x e y
+        x = rafflePosition(600);
+        y = rafflePosition(400);
+
+        drawRay(x, y);
+    }
+
+    // repetir processo em determinado intervalo de tempo
+    setInterval(attTela, 3000);
+
+    //função para alertar que acertou o alvo
+    function alerta(event)
+    {
+        // eixo x e y do click do usuário
+        var xclick = event.pageX - tela.offsetLeft;
+        var yclick = event.pageY - tela.offsetTop;
+        
+        if ((xclick > x - raio) 
+            && (xclick < x + raio) 
+            && (yclick > y - raio) 
+            && (yclick < y + raio)) // se acertou o alvo
+                alert("Acertou!!");
+    }
+
+    // posição do click na tela
+    tela.onclick = alerta;
+</script>

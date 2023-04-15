@@ -1,0 +1,84 @@
+<canvas width = "600" height="400"></canvas>
+
+<!-- usuário escolhe uma cor -->
+escolha uma cor <input type="color">
+
+<script>
+    // variavel usada como tela
+    var tela = document.querySelector('canvas');
+
+    // variavel usada como pincel
+    var pincel = tela.getContext('2d');
+
+    // variavel para guardar a cor que o usuário escolheu
+    var paleta = document.querySelector('input'); 
+
+    pincel.fillStyle = 'black'; // cor do pincel
+    pincel.fillRect(0, 0, 600, 400); //plot retangulo
+
+    // cores = ['blue', 'red', 'green']; // cores do circulo
+    // indexColor = 0; // indice para indicar a cor
+    var raio = 10; // raio do circulo
+
+    var desenha = false; // controle
+
+    function drawCircle(event) // função alerta de clique
+    {
+        if (desenha)
+        {
+            //guarda o eixo x do click
+            var x = event.pageX - tela.offsetLeft;
+            //tela.offsetLeft -> exclui pedaço da tela que o canvas considera 
+
+            //guarda o eixo y do click
+            var y = event.pageY - tela.offsetTop;
+            //tela.offsetTop -> mesma fução do anterior
+
+            if (event.shiftKey && event.ctrlKey) // se o shift e o ctrl estiver pressionado
+                alert("Pressione apenas uma tecla por vez");
+
+            else if (event.ctrlKey && raio - 5 >= 10) // se o ctrl estiver pressionado
+                raio -= 5; // decremente em 5 o raio
+            
+            else if (event.shiftKey && raio + 10 <= 40) // limitando o tamanho do raio
+                raio += 10;
+        }
+        
+        
+        console.log(raio);
+        
+        pincel.fillStyle = paleta.value; // cor do pincel
+        pincel.beginPath(); // novo caminho
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
+        pincel.fill();
+        
+        console.log(x + ", " + y);
+    }
+
+    // tela.onclick = exibeAlerta;
+
+    /*function mudaCor() // muda a cor
+    {
+        indexColor ++; //incrementa o indice
+        if (indexColor == cores.length)
+            indexColor = 0;
+        return false; // não exibe menu
+    }
+
+    tela.oncontextmenu = mudaCor; */
+
+    tela.onmousemove = drawCircle;
+    
+    //função anonima
+    tela.onmousedown = function() // validar controle
+    {
+        desenha = true;
+    }
+
+    //função anonima
+    tela.onmouseup = function() //negar o desenho
+    {
+        desenha = false;
+    }
+
+</script>

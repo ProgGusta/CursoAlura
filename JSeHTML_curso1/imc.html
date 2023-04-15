@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() // função para pular linha
+    {
+        document.write("<br><hr><br>");
+    }
+
+    function mostra(conteudo) // função para print
+    {
+        document.write("<big>" + conteudo + "</big>");
+        pulaLinha();
+    }
+
+    function calcularImc(peso, altura) // função para calculo do imc
+    {
+        return peso / (altura * altura);
+        
+    }
+/*
+    var peso = 89; // peso 
+    var altura = 1.95; // altura 
+    var imc = calcularImc(peso , altura); // calculo imc
+    
+    mostra("o imc de Gustavo é: " + imc); // print imc
+
+    var pesoAmg = 73; // peso amg
+    var alturaAmg = 1.71; // altura amg
+    var imcAmg = calcularImc(pesoAmg, alturaAmg); // calculo imc
+    
+    mostra("o imc de amigo é: " + imcAmg);
+*/  
+    // variaveis para guardar valores do teclado
+    var nome = prompt("informe seu nome") // função prompt pega um dado do teclado
+    var peso = prompt(nome + ", informe seu peso");
+    var altura = prompt(nome + ", informe sua altura");
+
+    imc = calcularImc(peso, altura);
+    mostra(nome + ", o seu imc é: " + imc);
+
+    if (imc < 18.5) // se imc é menor que 18.5 
+        mostra("você está abaixo do peso");
+
+    else if (imc >= 18.5 && imc <= 35) // se imc é maior ou igual a 18.5 e menor ou igual a 35
+        mostra("seu imc está dentro do recomendado");
+
+    else // caso contrário
+        mostra("você está acima do peso");
+
+</script>

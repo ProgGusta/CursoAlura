@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() // função para pular linha
+    {
+        document.write("<br><hr><br>");
+    }
+
+    function mostra(conteudo) // função para print
+    {
+        document.write("<big>" + conteudo + "</big>");
+        pulaLinha();
+    }
+
+/*
+    //idades dos familiares
+    var idadePedro = 60;
+    var idadeJorge = 32;
+    var idadeDele = 21;
+    var idadeDela = 18;
+
+    var total = idadeDela + idadeDele + idadeJorge + idadePedro;
+    var media = total/4;
+*/
+    // quantidade de familiares
+    var totalfamilia = parseInt(prompt("Quantidade de familiares?!"));
+
+    // variavel de controle
+    var control = 0;
+
+    // variavel para guardar a soma das idades
+    var idade = 0
+
+    while(control < totalfamilia) //enquanto control é menor que total da familia
+    {
+        idade += parseInt(prompt("Informe a idade do familiar " + (control + 1)));
+        control ++; // incremento
+    }
+
+    // calculo media
+    media = idade / totalfamilia;
+    mostra("a media das idades é: " + media);
+
+    // print estrelas
+    for(var linha = 0; linha < 3; linha++)
+    {
+        for(var coluna = 0; coluna < 3; coluna++)
+            document.write("*");
+        pulaLinha();
+    }
+</script>

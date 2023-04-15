@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() // função para pular linha
+    {
+        document.write("<br><hr><br>");
+    }
+
+    function mostra(conteudo) // função para print
+    {
+        document.write("<big>" + conteudo + "</big>");
+        pulaLinha();
+    }
+
+    // pega dado do teclado
+    var vitoria = parseInt(prompt("entre com o número de vitórias"));
+    var empate = parseInt(prompt("entre com o número de empates"));
+
+    // parseInt() -> converte string em número, se a string for um número 
+
+    // calculo dos pontos do time
+    var pontos = vitoria * 3 + empate;
+
+    mostra("os pontos do seu time é: " + pontos); // print
+
+    // estrutura condicional if/else
+    if (pontos > 28) // se pontos for maior que 28
+        mostra("o seu time está melhor que o ano passado");
+
+    else if (pontos < 28) // se pontos for menor que 28
+        mostra("o seu time está pior que o ano passado");
+
+    else // se pontos for igual a 28
+        mostra("o seu time está igual ao ano passado")
+
+    mostra("fim");
+</script>

@@ -1,0 +1,44 @@
+<canvas width = "600" height ="400"></canvas>
+
+<script>
+    // pega o argummento canvas do HTML e atribui a tela
+    var tela = document.querySelector('canvas');
+
+    // o pincel faz o trabaho de pintar e aida recebe o argumento que o desenho
+    // é em 2D
+    var pincel = tela.getContext('2d');
+
+    // escolher a cor
+    //pincel.fillStyle = 'Lightgrey' ; // recebe uma atribuição
+
+    // desenha o retangulo na tela
+    //pincel.fillRect(0, 0, 600, 400);
+    // arg 1 - onde inicia o eixo x
+    // arg 2 - onde inicia o eixo y
+    // arg 3 e 4 - onde termina o eixo x e y, respectivamente
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(400, 0, 200, 400);
+
+    // imprime bandeira da itália
+
+    //caminhos -> fazendo um triangulo
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath(); // escolher para onde o pincel vai
+    pincel.moveTo(300, 200); //coloco o pincel no meio da minha tela
+    pincel.lineTo(200, 400); // faça uma linha até a coordenada
+    pincel.lineTo(400, 400); // faça uma linha de onde parou até a coordenada
+    pincel.fill(); //preencha meu desenho
+
+    //caminhos -> fazendo um circulo
+    pincel.fillStyle = 'blue';
+    pincel.beginPath(); // começando um novo caminho(necessário)
+    pincel.arc(300, 200, 50, 0, 2 * 3.14); // fazendo um circulo
+    //arg 1 e 2 = eixo x e y de onde começa
+    //arg 3 = raio do circulo
+    //arg 4 e 5 = angulo inicial e final do circulo em radiano
+    pincel.fill(); // preencha meu desenho
+</script>

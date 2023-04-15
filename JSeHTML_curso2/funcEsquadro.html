@@ -1,0 +1,43 @@
+<canvas width = "600" height="400"></canvas>
+
+<script>
+    function drawTriangle(xa, ya, xc, yc, color) // desenha triangulo
+    {
+         // variavel usada como tela
+        var tela = document.querySelector('canvas');
+
+        // variavel usada como pincel
+        var pincel = tela.getContext('2d');
+
+        // TRIANGULO EXTERNO
+        pincel.fillStyle = color; // cor do triangulo externo
+        pincel.beginPath(); // novo caminho
+        pincel.moveTo(xa, ya); // coloco o pincel na posição inicial
+
+        //coordenada um 
+        pincel.lineTo(xa, yc); // primeira linha do triangulo
+
+        //coordenada dois 
+        pincel.lineTo(xc, yc); // segunda linha do triangulo
+
+        //preenchendo o desenho
+        pincel.fill();
+        //------------------------------------------------------------
+
+        // TRIANGULO INTERNO
+        pincel.fillStyle = 'white'; // cor do triangulo interno
+        pincel.beginPath(); // novo caminho
+        pincel.moveTo((6 * xa + xc) / 7, (9 * ya + 5 * yc) / 14); // coloco o pincel na posição inicial
+
+        //coordenada um
+        pincel.lineTo((6 * xa + xc) / 7, (ya + 6 * yc) / 7); // primeira linha do triangulo
+
+        //coordenada dois
+        pincel.lineTo((9 * ya + 5 * yc) / 14, (ya + 6 * yc) / 7); // segunda linha do triangulo
+
+        //preenchendo o desenho
+        pincel.fill();
+    }
+    
+    drawTriangle(50, 50, 400, 400, 'black'); //plot triangulo
+</script>

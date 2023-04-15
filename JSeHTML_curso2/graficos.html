@@ -1,0 +1,52 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    function drawSquare(x, y, width, height, color) // desenha quadrado
+    {
+        // variavel para tela
+        var tela = document.querySelector('canvas');
+
+        // variavel para pincel
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = color; //cor do quadrado
+        pincel.fillRect(x, y, width, height); //print quadrado
+        pincel.strokeStyle = 'black'; //cor da borda
+        pincel.strokeRect(x, y, width, height); //print borda
+    }
+
+    function drawText(x, y, text) // desenha texto
+    {
+        // variavel para tela
+        var tela = document.querySelector('canvas');
+
+        // variavel para pincel
+        var pincel = tela.getContext('2d');
+
+        pincel.font = '15px Georgia'; // tamanho e fonte da escrita
+        pincel.fillStyle = 'black'; // cor da escrita
+        pincel.fillText(text, x, y); // print texto
+    }
+
+    function drawGraph(x, y, series, colors, text) // desenha grafico
+    {
+        var controlY = 0; // controle eixo 
+        drawText(x + 10, y - 10, text); // print ano
+
+        for(var i = 0; i < series.length; i++) // percorrer o array
+        {
+            drawSquare(x, y + controlY, 50, series[i], colors[i]);
+            controlY += series[i];
+        }
+    }
+
+    var serie2015 = [50, 25, 20, 5]; //serie 2015
+    var cores = ['blue', 'green', 'yellow', 'red']; //cores
+
+    drawGraph(50, 50, serie2015, cores, '2015'); //plot graph
+
+    var serie2016 = [65, 20, 13, 2]; //srie 2016
+
+    drawGraph(150, 50, serie2016, cores, '2016'); //plot graph
+
+</script>

@@ -1,0 +1,56 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() // função para pular linha
+    {
+        document.write("<br><hr><br>");
+    }
+
+    function mostra(conteudo) // função para print
+    {
+        document.write("<big>" + conteudo + "</big>");
+        pulaLinha();
+    }
+
+    function sorteia(n) // função para delimitar o intervalo de numeros sorteados
+    {
+        return Math.round(Math.random() * n)
+    }
+
+    // numero para delimitar o intervalo
+    var numero = Math.round(Math.random() * 10); 
+    //console.log(numero);
+
+    // numero sorteado pelo computador
+    var computer = sorteia(numero);
+    //console.log(computer);
+
+    //contador de tentativas
+    var tentativas = 0;
+
+    while(tentativas < 3)
+    {
+        //incremento tentativas
+        tentativas ++;
+
+        // numero do usuário
+        var user = parseInt(prompt("Digite seu chute")); 
+
+        if (user == computer) // se user for igual ao numero
+        {
+            mostra("Você acertou");
+            break;
+        }
+
+        else // caso contrário
+        {
+            mostra("Você errou!!");
+            if(computer < user) // se o numero do usuário for maior que o sorteado
+                mostra("O número que você chutou é maior do que o sorteado");
+    
+            else // caso contrário
+                mostra("O número que você chutou é menor do que o sorteado");
+        }
+    }
+
+</script>
