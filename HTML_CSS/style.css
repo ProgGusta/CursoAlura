@@ -219,6 +219,13 @@ td, th {
 
 .image3 {
     width: 60%;
+    opacity: 1;
+    transition: 400ms;
+    box-shadow: 10px 10px 10px #000000;
+}
+
+.image3:hover {
+    opacity: 0.3;
 }
 
 .mapa {
@@ -239,4 +246,22 @@ td, th {
 .video {
     width: 560px;
     margin: 2em auto;
+}
+
+@media screen and (max-width: 480px) {
+    .caixa, .main, .conteudo-beneficios, .mapa-conteudo, .video {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .image3 {
+        width: 100%;
+    }
 }
