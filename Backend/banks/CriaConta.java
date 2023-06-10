@@ -9,10 +9,10 @@ public class CriaConta {
         jorel.profissao = "Barmen";
 
         Conta ex1 = new Conta();
-        ex1.titular = jorel;
+        ex1.setTitular(jorel); 
         ex1.deposita(250.43);
 
-        System.out.println(ex1.titular.nome);
+        System.out.println(ex1.getTitular().nome);
 
         Conta ex2 = new Conta();
         ex2.deposita(50.64);
