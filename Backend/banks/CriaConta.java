@@ -4,17 +4,17 @@ public class CriaConta {
     public static void main(String[] args)
     {
         Cliente jorel = new Cliente();
-        jorel.nome = "jorel do irmao";
-        jorel.cpf = "000000000-00";
-        jorel.profissao = "Barmen";
+        jorel.setNome("jorel do irmao");
+        jorel.setCpf("000000000-00");
+        jorel.setProfissao("Barmen");
 
-        Conta ex1 = new Conta();
+        Conta ex1 = new Conta(151, 242310);
         ex1.setTitular(jorel); 
         ex1.deposita(250.43);
 
-        System.out.println(ex1.getTitular().nome);
+        System.out.println(ex1.getTitular().getNome());
 
-        Conta ex2 = new Conta();
+        Conta ex2 = new Conta(432, 865745);
         ex2.deposita(50.64);
 
         System.out.println("Primeira conta: " + ex1.getSaldo());

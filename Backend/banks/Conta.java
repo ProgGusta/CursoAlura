@@ -6,11 +6,25 @@ public class Conta
     private int agencia;
     private int numero;
     private Cliente titular;
+    private static int total;
+
+    //construtor
+    public Conta(int agencia, int numero)
+    {
+        Conta.total++;
+        this.setNumero(numero);
+        this.setAgencia(agencia);
+    }
 
     //métodos especiais
     public double getSaldo()
     {
         return this.saldo; 
+    }
+
+    public static int getTotal()
+    {
+        return Conta.total;
     }
 
     public void setAgencia(int agencia)
@@ -51,7 +65,8 @@ public class Conta
 
     public void deposita(double value)
     {
-        this.saldo += value;   
+        if (value >= 0)
+            this.saldo += value;   
     }
 
     public boolean sacar(double value)
