@@ -27,5 +27,11 @@ public class CriaConta {
             System.out.println("Transferencia concluida");
         else
             System.out.println("Não foi possivel transferir");
+
+        ContaCorrente conta = new ContaCorrente(11, 5432);
+        conta.deposita(200.3);
+
+        ContaPoupanca cp = new ContaPoupanca(123, 3212);
+        cp.deposita(129.31);
     }
 }
