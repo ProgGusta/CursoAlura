@@ -8,13 +8,13 @@ public class CriaConta {
         jorel.setCpf("000000000-00");
         jorel.setProfissao("Barmen");
 
-        Conta ex1 = new Conta(151, 242310);
+        Conta ex1 = new ContaCorrente(151, 242310);
         ex1.setTitular(jorel); 
         ex1.deposita(250.43);
 
         System.out.println(ex1.getTitular().getNome());
 
-        Conta ex2 = new Conta(432, 865745);
+        Conta ex2 = new ContaPoupanca(432, 865745);
         ex2.deposita(50.64);
 
         System.out.println("Primeira conta: " + ex1.getSaldo());

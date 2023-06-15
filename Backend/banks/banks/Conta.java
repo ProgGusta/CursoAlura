@@ -1,8 +1,8 @@
 package banks;
 
-public class Conta 
+public abstract class Conta 
 {
-    private double saldo;
+    protected double saldo;
     private int agencia;
     private int numero;
     private Cliente titular;
@@ -63,11 +63,7 @@ public class Conta
         return this.titular;
     }
 
-    public void deposita(double value)
-    {
-        if (value >= 0)
-            this.saldo += value;   
-    }
+    public abstract void deposita(double value);
 
     public boolean sacar(double value)
     {

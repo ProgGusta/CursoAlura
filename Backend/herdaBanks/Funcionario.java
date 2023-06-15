@@ -1,6 +1,7 @@
 package herdaBanks;
 
-public class Funcionario 
+//classe não pode ser instanciada
+public abstract class Funcionario 
 {
     private String nome;
     private String cpf;
@@ -38,8 +39,6 @@ public class Funcionario
     }
 
     //métodos personalizados
-    public double getBonificacao()
-    {
-        return this.salario * 0.1;
-    }
+    public abstract double getBonificacao();
+
 }
