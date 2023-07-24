@@ -5,7 +5,7 @@ public class Fluxo{
         System.out.println("Ini do main");
         try {
             metodo1();
-        } catch (Exception e) {
+        } catch (ArithmeticException | MinhaExcecao e) {
             e.getStackTrace();
         }
         System.out.println("Fim do main");
@@ -22,9 +22,9 @@ public class Fluxo{
     {
         System.out.println("Ini do metodo2");
         
-       // ArithmeticException exception = new ArithmeticException();
-        //throw exception;
+        // ArithmeticException exception = new ArithmeticException();
+        throw new MinhaExcecao("Deu ruim");
 
-        System.out.println("Fim do metodo2");
+        //System.out.println("Fim do metodo2");
     }
 }

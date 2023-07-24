@@ -22,11 +22,13 @@ public class CriaConta {
 
         ex1.deposita(55.43);
 
+        /*
         boolean transferi = ex1.transferir(100.43, ex2);
         if (transferi)
             System.out.println("Transferencia concluida");
         else
             System.out.println("Não foi possivel transferir");
+        */
 
         ContaCorrente conta = new ContaCorrente(11, 5432);
         conta.deposita(200.3);

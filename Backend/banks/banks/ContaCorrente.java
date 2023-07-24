@@ -8,9 +8,9 @@ public class ContaCorrente extends Conta implements Tributavel
     }
 
     @Override
-    public boolean sacar(double value)
+    public void sacar(double value)
     {
-        return super.sacar(value += 0.20);
+        super.sacar(value += 0.20);
     }
 
     @Override
