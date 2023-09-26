@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/gustavo/Downloads/mysql-connector-java-8.0.17.jar",
+        "/home/gustavo/Documentos/cursos/CursoAlura/adicionais/mchange-commons-java-0.2.16.jar",
+        "/home/gustavo/Documentos/cursos/CursoAlura/adicionais/c3p0-0.9.5.4.jar",
+        "/home/gustavo/Documentos/cursos/CursoAlura/adicionais/mysql-connector-java-8.0.17.jar"
+    ]
+}
